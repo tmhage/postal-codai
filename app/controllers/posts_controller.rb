@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
-   @posts = Post.all
-end
+       @posts = Post.order( created_at: :desc )
+    end
 
 def create
    post_params = params.require( :post ).permit( :content )
